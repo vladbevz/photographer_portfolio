@@ -1,0 +1,49 @@
+.gallerySection {
+  padding: 2rem;
+  background: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+}
+
+.grid {
+   column-count: 3;
+  column-gap: 25px;
+}
+
+.imageWrapper {
+  break-inside: avoid;
+  margin-bottom: 25px;
+  overflow: hidden;
+  /* border-radius: 10px; */
+}
+
+.image {
+   width: 100%;
+  height: auto;
+  /* border-radius: 10px; */
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.image:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+@media (max-width: 900px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    column-count: 1;
+  }
+}
