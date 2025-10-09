@@ -9,8 +9,8 @@ import Footer from '../components/Footer/Footer';
 const Home = () => {
   return (
     <div>
+      {/* <Header variant="transparent"/> */}
       <HeroVideo />
-      <Header />
       <Gallery/>
       <LinkPreview/>
       <CallToAction/>

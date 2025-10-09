@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CallToAction.module.css";
-import bgImg from "../../assets/cta_bg.webp";
+import bgImg from "../../assets/cta.webp";
 
 const CallToAction = () => {
   return (
@@ -10,17 +10,17 @@ const CallToAction = () => {
     >
       <div className={styles.overlay}>
         <div className={styles.content}>
-          <h2 className={styles.title}>Vous voulez collaborer ?</h2>
+          <h2 className={styles.title}> Let's collaborate!</h2>
           <p className={styles.text}>
-            Suivez-moi ou contactez-moi directement sur Instagram pour votre projet
+            Follow my work or get in touch directly on Instagram to discuss your project
           </p>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/syrmais__photography?igsh=MTc5bjN5NXd0NnhjMA=="
             target="_blank"
             rel="noopener noreferrer"
             className={styles.button}
           >
-            Voir sur Instagram
+            Visit my Instagram
           </a>
         </div>
       </div>

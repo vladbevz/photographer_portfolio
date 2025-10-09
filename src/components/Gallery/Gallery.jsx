@@ -13,7 +13,7 @@ const photos = Array.from({ length: photosCount }, (_, i) => ({
 const Gallery = () => {
   return (
     <section className={styles.gallerySection}>
-      <h2 className={styles.title}>Moments capturés avec passion</h2>
+      <h2 className={styles.title}>Capturing moments with passion</h2>
 
       <div className={styles.grid}>
         {photos.map((photo, idx) => (

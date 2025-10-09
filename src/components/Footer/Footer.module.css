@@ -1,27 +1,28 @@
 .footer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0.25rem 2rem;
-  background: rgba(126, 125, 125, 0.12);
+  padding: 0.1rem 2rem;
+  background: #eeeeee;
   backdrop-filter: blur(10px);
   color: #4d4b4b;
   font-size: 0.95rem;
   letter-spacing: 0.3px;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 9999; /* гарантуємо що футер над іншими елементами */
 }
 
-.author,
-.creator {
-  margin: 0;
+.textGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 57rem;
 }
 
 .footer a {
   color: #4d4b4b;
-  opacity: 0.8;
+  opacity: 0.9;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -31,8 +32,7 @@
 }
 
 .topButton {
-  margin-left: auto;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
   border: none;
   border-radius: 50%;
   padding: 0.6rem;
@@ -40,11 +40,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: transform 0.28s ease, background 0.28s ease;
   color: #4d4b4b;
+  z-index: 10000; /* щоби кнопка була над усім */
+  /* не позиціонуємо absolute — краще природне розташування */
 }
 
 .topButton:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.24);
   transform: translateY(-3px);
+}
+
+/* важливо: щоб svg не блокував клік кнопки */
+.topButton svg {
+  pointer-events: none;
 }

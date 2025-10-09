@@ -2,25 +2,71 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 3rem;
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 3rem auto 2rem;
   padding: 0 2rem;
+  font-family: "Playfair Display", serif;
+  color: #2d2d2d;
 }
 
 .text {
   flex: 1 1 50%;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+.text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #1f1f1f;
+  margin-left: 2rem;
+}
+
+.text p {
+  margin-bottom: 1.6rem;
+  text-align: justify;
 }
 
 .imageWrapper {
   flex: 1 1 40%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem; /* щоб не торкалось хедера */
 }
 
 .imageWrapper img {
-  max-width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 85%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивність */
+@media (max-width: 900px) {
+  .intro {
+    flex-direction: column-reverse;
+    margin-top: 4rem;
+  }
+
+  .text {
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
+
+  .text h2 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .imageWrapper img {
+    width: 100%;
+    max-width: 500px;
+  }
 }

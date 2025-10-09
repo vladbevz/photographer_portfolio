@@ -6,15 +6,14 @@ const AboutIntro = () => {
   return (
     <section className={styles.intro}>
       <div className={styles.text}>
-        <h2>Bienvenue !</h2>
+        <h2>Welcome!</h2>
         <p>
-         Je suis Anastasiia, photographe et vidéaste professionnelle originaire d’Ukraine, aujourd’hui basée en Europe. J’accompagne les particuliers et les entreprises à travers des images authentiques, élégantes et pleines d’émotion.
+         I'm Anastasiia, a professional photographer and videographer originally from Ukraine, now based in Europe. I work with individuals and businesses, creating authentic, elegant, and emotionally powerful imagery. 
 
-Mon objectif : capturer vos instants précieux et créer du contenu visuel qui met en valeur votre personnalité, votre marque ou votre événement.
+My goal is to capture your precious moments and create visual content that highlights your personality, your brand, or your event.
         </p>
         <p>
-          Mon style : naturel, moderne et raffiné.
-Mon approche : comprendre vos besoins et transformer vos idées en images qui racontent votre histoire.
+          My style: natural, modern, and refined. My approach: to understand your needs and transform your ideas into images that tell your story.
 
         </p>
       </div>

@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 const About = () => {
   return (
     <>
-      <Header variant="light" /> {/* передаємо варіант білого фону */}
+      <Header variant="light" /> 
       <AboutIntro />
       <AboutCTA />
       <Footer />

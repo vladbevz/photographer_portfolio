@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 const Contacts = () => {
   return (
     <>
-      <Header />
+      <Header variant="light"/>
       <ContactsComponent />
       <Footer />
     </>

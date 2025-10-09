@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 const Portfolio = () => {
   return (
     <>
-      <Header />
+      <Header variant="light"/>
       <GalleryGrid />
       <Footer />
     </>
