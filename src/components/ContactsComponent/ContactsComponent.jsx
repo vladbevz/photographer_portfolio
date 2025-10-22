@@ -1,19 +1,42 @@
 import React, { useState } from "react";
 import styles from "./ContactsComponent.module.css";
-import { Instagram, Send } from "lucide-react"; // красиві мінімалістичні іконки
-
-import contactImg from "../../assets/experience.webp"; // твоє фото зліва
+import { Instagram, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
+import emailjs from "emailjs-com";
+import contactImg from "../../assets/experience.webp";
 
 const ContactsComponent = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Дякую! Повідомлення відправлено.");
-    setForm({ name: "", email: "", message: "" });
+    setStatus("loading");
+
+    try {
+      await emailjs.send(
+        "service_bsaa2lb", // ← твій service ID
+        "template_2f3i2fb", // ← твій template ID
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        "mOTfvQqRtMuWQzOlM" // ← твій public key
+      );
+
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+
+      setTimeout(() => setStatus("idle"), 3000); // після 3с приховуємо повідомлення
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -51,16 +74,40 @@ const ContactsComponent = () => {
             rows={4}
             required
           />
-          <button type="submit">Send Message</button>
+
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className={`${styles.submitBtn} ${
+              status === "loading" ? styles.loading : ""
+            }`}
+          >
+            {status === "loading" ? (
+              <>
+                <Loader2 className={styles.spinner} size={20} /> Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
+          </button>
+
+          {status === "success" && (
+            <p className={`${styles.feedback} ${styles.success}`}>
+              <CheckCircle size={18} /> Message sent successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p className={`${styles.feedback} ${styles.error}`}>
+              <XCircle size={18} /> Something went wrong. Try again.
+            </p>
+          )}
         </form>
 
         <div className={styles.info}>
           <p>
             <strong>Contact</strong>
             <br />
-            <a href="mailto:bevz.vlad15@gmail.com">
-              bevz.vlad15@gmail.com
-            </a>
+            <a href="mailto:bevz.vlad15@gmail.com">bevz.vlad15@gmail.com</a>
           </p>
           <p>
             <strong>Based in</strong>
@@ -91,4 +138,3 @@ const ContactsComponent = () => {
 };
 
 export default ContactsComponent;
-
