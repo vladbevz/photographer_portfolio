@@ -1,0 +1,20 @@
+
+{
+  "intro": {
+    "welcome": "Bienvenue",
+    "paragraph1": "Je suis Anastasiia, photographe et vidéaste professionnelle originaire d'Ukraine, maintenant basée en Europe. Je travaille avec des particuliers et des entreprises, créant des images authentiques, élégantes et émotionnellement puissantes.",
+    "paragraph2": "Mon objectif est de capturer vos moments précieux et de créer un contenu visuel qui met en valeur votre personnalité, votre marque ou votre événement.",
+    "paragraph3": "Mon style : naturel, moderne et raffiné. Mon approche : comprendre vos besoins et transformer vos idées en images qui racontent votre histoire.",
+    "button": "Voir mon portfolio"
+  },
+  "cta": {
+    "title": "Restez connecté",
+    "subtitle": "Suivez mes derniers travaux, les coulisses et les réflexions sur la photographie sur Instagram",
+    "button": "Suivre sur Instagram",
+    "stats": {
+      "projects": "Projets",
+      "experience": "Années d'expérience",
+      "clients": "Clients satisfaits"
+    }
+  }
+}

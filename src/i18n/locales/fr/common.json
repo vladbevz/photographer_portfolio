@@ -1,0 +1,25 @@
+
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "portfolio": "Portfolio",
+    "contacts": "Contact",
+    "viewPortfolio": "Voir le portfolio",
+    "contactMe": "Me contacter",
+    "follow": "Suivre",
+    "send": "Envoyer",
+    "loading": "Chargement...",
+    "scroll": "Défiler pour explorer"
+  },
+  "header": {
+    "logo": "Anastasia Syrmais",
+    "menu": "Menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} Anastasia Syrmais",
+    "madeBy": "Site créé par",
+    "atelierCode": "AtelierCode",
+    "scrollTop": "Retour en haut"
+  }
+}

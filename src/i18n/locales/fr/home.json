@@ -1,0 +1,26 @@
+
+{
+  "hero": {
+    "title": "Capturer l'instant présent",
+    "subtitle": "Photographie d'art avec un regard pour l'élégance, l'émotion et la beauté intemporelle",
+    "cta": "Voir le portfolio",
+    "aboutMe": "À propos de moi"
+  },
+  "gallery": {
+    "title": "Capturer des moments avec passion",
+    "subtitle": "Chaque photographie raconte une histoire unique, cadrée avec précision et un regard artistique pour les détails"
+  },
+  "linkPreview": {
+    "about": "À propos",
+    "aboutSubtitle": "Découvrez l'artiste derrière l'objectif",
+    "portfolio": "Portfolio",
+    "portfolioSubtitle": "Explorez des collections de photographie d'art",
+    "contact": "Contact",
+    "contactSubtitle": "Créons ensemble quelque chose de beau"
+  },
+  "cta": {
+    "title": "Travaillons ensemble",
+    "text": "Suivez mon travail ou contactez-moi directement sur Instagram pour discuter de votre projet de photographie",
+    "button": "Visiter Instagram"
+  }
+}

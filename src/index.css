@@ -1,23 +1,138 @@
+/* ===== 1. ПІДКЛЮЧЕННЯ ШРИФТІВ ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ===== 2. CSS ЗМІННІ (КОЛЬОРОВА ПАЛІТРА) ===== */
+:root {
+  /* Основні кольори */
+  --color-bg-primary: #FFFDFA;         /* Основний фон - теплий білий */
+  --color-bg-secondary: #F8F5F0;       /* Другий фон - слонова кістка */
+  --color-bg-light: #FAF9F6;           /* Для секцій */
+  
+  /* Текст */
+  --color-text-primary: #2A2520;       /* Основний темний */
+  --color-text-secondary: #6D6863;     /* Другий текст */
+  --color-text-light: #8C8884;         /* Світлий текст */
+  
+  /* Акценти */
+  --color-accent: #B89A73;             /* Приглушене золото/бронза */
+  --color-accent-light: #E8DCCC;       /* Світлий акцент */
+  
+  /* Рамки та роздільники */
+  --color-border: rgba(42, 37, 32, 0.08);
+  --color-border-light: rgba(42, 37, 32, 0.04);
+  
+  /* Тіні (дуже м'які) */
+  --shadow-subtle: 0 2px 12px rgba(0, 0, 0, 0.03);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.07);
+  
+  /* Переходи */
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: all 0.5s ease;
+  
+  /* Відступи */
+  --section-padding: 5rem 2rem;
+  --container-max: 1200px;
+
+  --color-success: #2e7d32;
+  --color-error: #d32f2f;
+}
+
+/* ===== 3. СКИДАННЯ СТИЛІВ ТА БАЗОВІ НАЛАШТУВАННЯ ===== */
 * {
-  font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 html, body, #root {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-   background-color: #f9f9f9;
-  color: #222;
-  line-height: 1.5;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
-h1, h2, h3, .highlight {
-  font-family: "Playfair Display", serif;
+
+/* ===== 4. ТИПОГРАФІКА ===== */
+/* Для основного тексту використовуємо Inter (чистий, сучасний) */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+}
+
+/* Заголовки — Playfair Display (елегантний, з засічками) */
+h1, h2, h3, h4, h5, h6, .highlight {
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
-  color: #222;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-secondary);
+  max-width: 65ch; /* Обмеження ширини тексту для читабельності */
+}
+
+/* ===== 5. БАЗОВІ СТИЛІ ДЛЯ ПОСИЛАНЬ ТА КНОПОК ===== */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ===== 6. ДОПОМІЖНІ КЛАСИ ===== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Приховати візуально, але залишити для скрінрідерів */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

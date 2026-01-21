@@ -1,63 +1,50 @@
+// src/components/Footer/Footer.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { ArrowUp, Instagram } from "lucide-react";
 import styles from "./Footer.module.css";
-import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const { t } = useTranslation("common");
+  
   const scrollToTop = () => {
-    console.log("Footer: scrollToTop clicked");
-
-    // Кандидати для скролу (в порядку пріоритету)
-    const candidates = [
-      document.querySelector("#root"),
-      document.querySelector("#app"),
-      document.querySelector("main"),
-      document.scrollingElement,
-      document.documentElement,
-      document.body,
-    ].filter(Boolean);
-
-    // знайти перший елемент, який фактично скролиться
-    let target = candidates.find(
-      (el) => el.scrollHeight > el.clientHeight
-    );
-
-    if (!target) {
-      target = document.scrollingElement || document.documentElement || document.body;
-    }
-
-    // Якщо це document.scrollingElement або body/html, використовуємо window.scrollTo для сумісності
-    if (target === document.scrollingElement || target === document.documentElement || target === document.body) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      // скролимо знайдений контейнер
-      if ("scrollTo" in target) {
-        target.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        target.scrollTop = 0;
-      }
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.textGroup}>
-        <p className={styles.author}>© 2025 Anastasia Syrmais</p>
+        <p className={styles.author}>
+          {t("footer.copyright", { year: new Date().getFullYear() })}
+        </p>
         <p className={styles.creator}>
-          Website by {" "}
+          {t("footer.madeBy", "Website by")}{" "}
           <a
-            href="https://brilliant-peony-aafd00.netlify.app/"
+            href="https://ateliercode.fr"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vlad
+            {t("footer.atelierCode", "AtelierCode")}
           </a>
         </p>
+      </div>
+      
+      <div className={styles.socialLinks}>
+        <a
+          href="https://www.instagram.com/syrmais__photography?igsh=MTc5bjN5NXd0NnhjMA=="
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.socialLink}
+          aria-label="Instagram"
+        >
+          <Instagram size={16} />
+        </a>
       </div>
 
       <button
         className={styles.topButton}
         onClick={scrollToTop}
-        aria-label="Повернутись вгору"
+        aria-label={t("footer.scrollTop", "Scroll to top")}
         type="button"
       >
         <ArrowUp size={20} />

@@ -1,0 +1,36 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contacts": "Contact",
+    "viewPortfolio": "View Portfolio",
+    "contactMe": "Contact Me",
+    "follow": "Follow",
+    "send": "Send",
+    "loading": "Loading...",
+    "scroll": "Scroll to explore",
+    "readMore": "Read More",
+    "startProject": "Start a Project"
+  },
+  "header": {
+    "logo": "Anastasia Syrmais",
+    "menu": "Menu"
+  },
+  "footer": {
+    "copyright": "© {{year}} Anastasia Syrmais",
+    "madeBy": "Website by",
+    "atelierCode": "AtelierCode",
+    "scrollTop": "Back to top"
+  },
+  "buttons": {
+    "viewPortfolio": "View Portfolio",
+    "contactMe": "Contact Me",
+    "sendMessage": "Send Message",
+    "followInstagram": "Follow on Instagram",
+    "visitInstagram": "Visit Instagram",
+    "learnMore": "Learn More",
+    "getInTouch": "Get in Touch"
+  }
+}

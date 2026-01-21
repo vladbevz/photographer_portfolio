@@ -1,0 +1,26 @@
+
+{
+  "hero": {
+    "title": "Capturing Moments in Time",
+    "subtitle": "Fine art photography with an eye for elegance, emotion, and timeless beauty",
+    "cta": "View Portfolio",
+    "aboutMe": "About Me"
+  },
+  "gallery": {
+    "title": "Capturing Moments with Passion",
+    "subtitle": "Each photograph tells a unique story, framed with precision and an artistic eye for detail"
+  },
+  "linkPreview": {
+    "about": "About",
+    "aboutSubtitle": "Get to know the artist behind the lens",
+    "portfolio": "Portfolio",
+    "portfolioSubtitle": "Explore curated collections of fine art photography",
+    "contact": "Contact",
+    "contactSubtitle": "Let's create something beautiful together"
+  },
+  "cta": {
+    "title": "Let's Collaborate",
+    "text": "Follow my work or get in touch directly on Instagram to discuss your next photography project",
+    "button": "Visit Instagram"
+  }
+}

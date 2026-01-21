@@ -1,26 +1,240 @@
+/* ===== ABOUT CTA SECTION ===== */
 .cta {
   text-align: center;
-  padding: 2rem 2rem;
-  background: #f9f9f9;
+  padding: 6rem 2rem;
+  background: var(--color-bg-light);
+  position: relative;
+  overflow: hidden;
+  margin: 4rem 0;
 }
 
+/* Декоративні елементи */
+.cta::before,
+.cta::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 60px;
+  background: var(--color-accent);
+  opacity: 0.3;
+}
+
+.cta::before {
+  left: 4rem;
+  top: 3rem;
+}
+
+.cta::after {
+  right: 4rem;
+  bottom: 3rem;
+}
+
+/* Контейнер для контенту */
+.ctaContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== TYPOGRAPHY ===== */
 .cta h3 {
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
 }
 
+/* Підкреслення заголовка */
+.cta h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.cta h3:hover::after {
+  width: 80px;
+}
+
+.cta .subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== BUTTON ===== */
 .button {
-  background-color: rgba(78, 78, 78, 0.2);
-  color: #383737;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 0.9rem 2.2rem;
-  border-radius: 50px;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  padding: 1rem 3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ефект підсвічування */
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 154, 115, 0.1),
+    transparent
+  );
+  transition: left 0.7s ease;
 }
 
 .button:hover {
-  background-color: rgba(49, 49, 49, 0.4);
-  color: #ffffff;
+  background: var(--color-bg-primary);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  padding: 1rem 3.5rem;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+/* Instagram іконка (опціонально) */
+.instagramIcon {
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button:hover .instagramIcon {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Альтернативний текст для іконки */
+.button::after {
+  content: '→';
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.button:hover::after {
+  transform: translateX(4px);
+}
+
+/* ===== SOCIAL STATS (опціонально) ===== */
+.socialStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .cta {
+    padding: 5rem 2rem;
+  }
+  
+  .cta::before,
+  .cta::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .cta h3 {
+    font-size: 1.75rem;
+  }
+  
+  .cta .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .button {
+    padding: 0.875rem 2.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .button:hover {
+    padding: 0.875rem 2.8rem;
+  }
+  
+  .socialStats {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  .cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .button {
+    padding: 0.8rem 2rem;
+    width: 100%;
+    max-width: 280px;
+  }
 }

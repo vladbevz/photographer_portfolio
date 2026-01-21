@@ -1,0 +1,23 @@
+{
+  "title": "Get in Touch",
+  "subtitle": "Ready to create something beautiful? Share your vision and let's bring it to life together.",
+  "form": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "sending": "Sending Message",
+    "success": "Your message has been sent successfully!",
+    "error": "Something went wrong. Please try again."
+  },
+  "info": {
+    "contact": "Contact",
+    "response": "Response within 24 hours",
+    "location": "Location",
+    "available": "Available for projects worldwide"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "telegram": "Telegram"
+  }
+}

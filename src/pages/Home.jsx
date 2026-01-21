@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       {/* <Header variant="transparent"/> */}
       <HeroVideo />
-      <Gallery/>
+      {/* <Gallery/> */}
       <LinkPreview/>
       <CallToAction/>
       <Footer/>

@@ -1,0 +1,24 @@
+
+{
+  "title": "Prendre contact",
+  "subtitle": "Prêt à créer quelque chose de beau ? Partagez votre vision et donnons-lui vie ensemble.",
+  "form": {
+    "name": "Nom complet",
+    "email": "Adresse email",
+    "message": "Votre message",
+    "submit": "Envoyer le message",
+    "sending": "Envoi en cours",
+    "success": "Votre message a été envoyé avec succès !",
+    "error": "Quelque chose s'est mal passé. Veuillez réessayer."
+  },
+  "info": {
+    "contact": "Contact",
+    "response": "Réponse sous 24 heures",
+    "location": "Localisation",
+    "available": "Disponible pour des projets dans le monde entier"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "telegram": "Telegram"
+  }
+}
