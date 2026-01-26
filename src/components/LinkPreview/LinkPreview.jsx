@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // Тимчасові зображення
-import aboutImg from "../../assets/about_portret.webp";
-import portfolioImg from "../../assets/portfolio.webp";
-import experienceImg from "../../assets/experience.webp";
+import aboutImg from "../../assets/IMG_9966.webp";
+import portfolioImg from "../../assets/photo_2026-01-26_17-50-44.webp";
+import experienceImg from "../../assets/photo_2026-01-26_17-55-41.webp";
 
 const LinkPreview = () => {
   const [activeLink, setActiveLink] = useState(0);

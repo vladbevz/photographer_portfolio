@@ -1,95 +1,88 @@
 /* ===== FOOTER ===== */
 .footer {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 4rem;
+  padding: 1.25rem 2rem;
   background: var(--color-bg-light);
   color: var(--color-text-secondary);
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.3px;
-  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+  border-top: 1px solid var(--color-border-light);
   position: relative;
   z-index: 100;
 }
 
-/* Верхня лінія */
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--color-border) 50%, 
-    transparent 100%);
+/* Контейнер для вмісту */
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 
-/* ===== TEXT GROUP ===== */
+/* ===== TEXT GROUP (в одну лінію) ===== */
 .textGroup {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-light);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .author {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-primary);
-  margin: 0;
+}
+
+.divider {
+  color: var(--color-border);
+  opacity: 0.5;
 }
 
 .creator {
-  font-size: 0.85rem;
   color: var(--color-text-light);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
 }
 
 /* ===== LINKS ===== */
-.footer a {
-  color: var(--color-text-secondary);
+.link {
+  color: var(--color-text-primary);
   text-decoration: none;
-  transition: var(--transition-smooth);
-  position: relative;
+  transition: color 0.2s ease;
   font-weight: 500;
 }
 
-.footer a:hover {
+.link:hover {
   color: var(--color-accent);
 }
 
-/* Підкреслення для посилань */
-.footer a::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-accent);
-  transition: width 0.3s ease;
+/* ===== INSTAGRAM LINK ===== */
+.instagramLink {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
 }
 
-.footer a:hover::after {
-  width: 100%;
+.instagramLink:hover {
+  color: var(--color-accent);
+  transform: translateY(-1px);
 }
 
 /* ===== TOP BUTTON ===== */
 .topButton {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   background: var(--color-bg-light);
   border: 1px solid var(--color-border);
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -97,17 +90,18 @@
   transition: var(--transition-smooth);
   color: var(--color-text-primary);
   z-index: 10000;
-  box-shadow: var(--shadow-subtle);
-  backdrop-filter: blur(10px);
-  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  opacity: 0.8;
 }
 
+/* Важливо: цей клас має бути ВИЩЕ в коді, ніж медіа-запит для мобільних */
 .topButton:hover {
   background: var(--color-bg-primary);
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   opacity: 1;
 }
 
@@ -120,84 +114,70 @@
   transform: translateY(-1px);
 }
 
-/* ===== SOCIAL LINKS (опціонально) ===== */
-.socialLinks {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.socialLink {
-  color: var(--color-text-light);
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: var(--transition-smooth);
-}
-
-.socialLink:hover {
-  color: var(--color-accent);
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .footer {
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
   }
   
   .topButton {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 40px;
-    height: 40px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 34px;
+    height: 34px;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .content {
+    width: 100%;
   }
   
   .textGroup {
-    order: 2;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   
-  .creator {
-    justify-content: center;
+  .instagramLink {
+    margin-left: 0;
   }
   
+  /* Кнопка скролу залишається fixed навіть на мобільних */
   .topButton {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    order: 1;
-    width: 42px;
-    height: 42px;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Приховуємо кнопку на мобільних, оскільки вона вже в футері */
-  .topButton:not(:focus) {
-    position: relative !important;
+    position: fixed !important;
+    bottom: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 1.25rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.875rem 1rem;
   }
   
-  .creator {
-    flex-direction: column;
-    gap: 0.25rem;
+  .textGroup {
+    gap: 0.4rem;
+  }
+  
+  .divider {
+    display: inline; /* Залишаємо роздільники навіть на мобільних */
   }
   
   .topButton {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+  
+  .topButton svg {
+    width: 14px;
+    height: 14px;
   }
 }

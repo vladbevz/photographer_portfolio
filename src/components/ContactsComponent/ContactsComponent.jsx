@@ -30,7 +30,7 @@ const ContactsComponent = () => {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
-          to_email: "bevz.vlad15@gmail.com"
+          to_email: "a.syrmais@gmail.com"
         },
         "mOTfvQqRtMuWQzOlM"
       );
@@ -141,7 +141,7 @@ const ContactsComponent = () => {
             <strong>
               <Mail size={14} /> {t("info.contact", "Contact")}
             </strong>
-            <a href="mailto:bevz.vlad15@gmail.com">bevz.vlad15@gmail.com</a>
+            <a href="mailto:a.syrmais@gmail.com">a.syrmais@gmail.com</a>
             <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-light)' }}>
               {t("info.response", "Response within 24 hours")}
             </p>

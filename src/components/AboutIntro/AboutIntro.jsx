@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import styles from "./AboutIntro.module.css";
-import aboutImg from "../../assets/about.photo.jpg"; 
+import aboutImg from "../../assets/about_portret.webp"; 
 
 const AboutIntro = () => {
   const { t } = useTranslation("about");

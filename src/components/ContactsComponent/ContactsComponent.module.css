@@ -16,7 +16,7 @@
   justify-content: center;
   padding: 4rem;
   position: relative;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary); /* Змінили на такий же як форма */
 }
 
 /* Декоративні рамки для зображення */
@@ -25,9 +25,10 @@
   width: 90%;
   height: 90%;
   overflow: hidden;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary); /* Тут теж */
 }
 
+/* Тонкий контраст для рамки */
 .imageWrapper::before {
   content: '';
   position: absolute;
@@ -35,9 +36,24 @@
   right: -15px;
   bottom: 15px;
   left: 15px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-light); /* Світліша рамка */
   z-index: 1;
   pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Додамо ще одну тонку внутрішню рамку для елегантності */
+.imageWrapper::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: -15px;
+  left: -15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .image {
@@ -64,6 +80,25 @@
   justify-content: center;
   max-width: 600px;
   margin: 0 auto;
+  background: var(--color-bg-primary);
+  position: relative;
+}
+
+/* Додамо тонку лінію між секціями для розділення */
+.formSide::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-border-light) 50%,
+    transparent 100%
+  );
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -351,13 +386,19 @@
     height: 100%;
   }
   
-  .imageWrapper::before {
+  .imageWrapper::before,
+  .imageWrapper::after {
     display: none;
   }
   
   .formSide {
     padding: 4rem 2rem;
     max-width: 100%;
+  }
+  
+  /* Приховуємо лінію на мобільних */
+  .formSide::before {
+    display: none;
   }
   
   .submitBtn {
