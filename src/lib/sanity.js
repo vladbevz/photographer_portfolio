@@ -1,6 +1,6 @@
 // src/lib/sanity.js
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 
 // Отримуємо змінні з .env
 const projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
@@ -23,18 +23,15 @@ const client = createClient({
   useCdn: true, // Використовує CDN для швидкості
 });
 
-const builder = imageUrlBuilder(client);
+const imageBuilder = createImageUrlBuilder(client);
 
-// Функція для отримання URL зображень
 export const urlFor = (source) => {
   if (!source) {
     console.warn("⚠️ No image source provided");
-    return {
-      width: () => ({ height: () => ({ url: () => "" }) }),
-      url: () => "",
-    };
+    return imageBuilder.image("").url() || "";
   }
-  return builder.image(source);
+
+  return imageBuilder.image(source);
 };
 
 // 1. Отримати всі проекти
