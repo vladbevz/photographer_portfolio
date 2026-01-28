@@ -1,17 +1,17 @@
+// src/pages/Portfolio.jsx
 import React from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import PortfolioGallery from "../components/PortfolioGallery/PortfolioGallery";
+import PortfolioMain from "../components/Portfolio/PortfolioMain";
 
 const Portfolio = () => {
   return (
     <>
       <Header variant="light" />
-      {/* <PortfolioGallery /> */}
+      <PortfolioMain />
       <Footer />
     </>
   );
 };
 
 export default Portfolio;
-

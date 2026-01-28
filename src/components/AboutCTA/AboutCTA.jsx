@@ -27,19 +27,19 @@ const AboutCTA = () => {
         {/* Секція зі статистикою */}
         <div className={styles.socialStats}>
           <div className={styles.stat}>
-            <div className={styles.statNumber}>150+</div>
+            <div className={styles.statNumber}>30+</div>
             <div className={styles.statLabel}>
               {t("cta.stats.projects", "Projects")}
             </div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statNumber}>5+</div>
+            <div className={styles.statNumber}>2+</div>
             <div className={styles.statLabel}>
               {t("cta.stats.experience", "Years Experience")}
             </div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statNumber}>50+</div>
+            <div className={styles.statNumber}>30+</div>
             <div className={styles.statLabel}>
               {t("cta.stats.clients", "Happy Clients")}
             </div>

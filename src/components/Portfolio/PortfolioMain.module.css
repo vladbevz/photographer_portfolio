@@ -1,0 +1,85 @@
+/* src/components/Portfolio/PortfolioMain.module.css */
+.portfolioMain {
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+}
+
+.hero {
+  padding: 6rem 2rem 4rem;
+  background: var(--color-bg-light);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.heroContent {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.galleryContainer {
+  padding: 3rem 2rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem;
+  color: var(--color-text-light);
+}
+
+.stats {
+  text-align: center;
+  padding-top: 3rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+  
+  .galleryContainer {
+    padding: 2rem 1rem;
+  }
+}

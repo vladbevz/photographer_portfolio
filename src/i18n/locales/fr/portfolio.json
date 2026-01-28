@@ -1,6 +1,20 @@
 {
   "hero": {
     "title": "Portfolio",
-    "subtitle": "A curated selection of my finest work"
+    "subtitle": "Une sélection de mes meilleurs travaux"
+  },
+  "filters": {
+    "all": "Tous les travaux",
+    "portrait": "Portrait",
+    "wedding": "Mariage",
+    "commercial": "Commercial",
+    "editorial": "Éditorial",
+    "fineart": "Beaux-arts",
+    "nature": "Nature"
+  },
+  "loading": "Chargement des projets...",
+  "empty": "Aucun projet trouvé",
+  "stats": {
+    "projects": "projets"
   }
 }

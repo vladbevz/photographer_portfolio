@@ -2,5 +2,19 @@
   "hero": {
     "title": "Portfolio",
     "subtitle": "A curated selection of my finest work"
+  },
+  "filters": {
+    "all": "All Works",
+    "portrait": "Portrait",
+    "wedding": "Wedding",
+    "commercial": "Commercial",
+    "editorial": "Editorial",
+    "fineart": "Fine Art",
+    "nature": "Nature"
+  },
+  "loading": "Loading projects...",
+  "empty": "No projects found",
+  "stats": {
+    "projects": "projects"
   }
 }
