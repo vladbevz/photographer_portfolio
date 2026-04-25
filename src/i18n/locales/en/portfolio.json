@@ -4,13 +4,12 @@
     "subtitle": "A curated selection of my finest work"
   },
   "filters": {
-    "all": "All Works",
-    "portrait": "Portrait",
-    "wedding": "Wedding",
-    "commercial": "Commercial",
-    "editorial": "Editorial",
-    "fineart": "Fine Art",
-    "nature": "Nature"
+    "all": "All",
+    "portraits": "Portraits",
+    "couple": "Couple",
+    "grossesse": "Maternity / Newborn",
+    "mariage": "Wedding",
+    "business": "Business"
   },
   "loading": "Loading projects...",
   "empty": "No projects found",

@@ -1,16 +1,15 @@
 {
   "hero": {
     "title": "Portfolio",
-    "subtitle": "Une sélection de mes meilleurs travaux"
+    "subtitle": "Une sélection de mes meilleurs clichés."
   },
   "filters": {
-    "all": "Tous les travaux",
-    "portrait": "Portrait",
-    "wedding": "Mariage",
-    "commercial": "Commercial",
-    "editorial": "Éditorial",
-    "fineart": "Beaux-arts",
-    "nature": "Nature"
+    "all": "Tous",
+    "portraits": "Portraits",
+    "couple": "Couple",
+    "grossesse": "Encainte / Nouveau né",
+    "mariage": "Mariage",
+    "business": "Business"
   },
   "loading": "Chargement des projets...",
   "empty": "Aucun projet trouvé",

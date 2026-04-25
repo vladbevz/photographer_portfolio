@@ -37,12 +37,12 @@ const PortfolioMain = () => {
   };
 
   const categories = [
-    { id: "all", label: t("filters.all", "All Works") },
-    { id: "portrait", label: t("filters.portrait", "Portrait") },
-    { id: "wedding", label: t("filters.wedding", "Wedding") },
-    { id: "commercial", label: t("filters.commercial", "Commercial") },
-    { id: "editorial", label: t("filters.editorial", "Editorial") },
-    { id: "fineart", label: t("filters.fineart", "Fine Art") },
+    { id: "all",        label: t("filters.all",        "Tous") },
+    { id: "portraits",  label: t("filters.portraits",  "Portraits") },
+    { id: "couple",     label: t("filters.couple",     "Couple") },
+    { id: "grossesse",  label: t("filters.grossesse",  "Grossesse / Nouveau-Nés") },
+    { id: "mariage",    label: t("filters.mariage",    "Mariage") },
+    { id: "business",   label: t("filters.business",   "Business") },
   ];
 
   return (
