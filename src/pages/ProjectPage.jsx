@@ -1,17 +1,20 @@
-// src/pages/ProjectPage.jsx
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SEO from "../components/SEO/SEO";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import Lightbox from "../components/Portfolio/Lightbox";
 import { ArrowLeft } from "lucide-react";
 import { getProjectBySlug, urlFor } from "../lib/sanity";
 import styles from "./ProjectPage.module.css";
 
 const ProjectPage = () => {
   const { slug } = useParams();
+  const { t } = useTranslation("portfolio");
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   useEffect(() => {
     fetchProject();
@@ -35,7 +38,7 @@ const ProjectPage = () => {
         <Header variant="light" />
         <div className={styles.loading}>
           <div className={styles.spinner}></div>
-          <p>Loading project...</p>
+          <p>{t("project.loading")}</p>
         </div>
         <Footer />
       </>
@@ -47,9 +50,9 @@ const ProjectPage = () => {
       <>
         <Header variant="light" />
         <div className={styles.notFound}>
-          <h2>Project not found</h2>
+          <h2>{t("project.notFound")}</h2>
           <Link to="/portfolio" className={styles.backLink}>
-            <ArrowLeft size={16} /> Back to Portfolio
+            <ArrowLeft size={16} /> {t("project.back")}
           </Link>
         </div>
         <Footer />
@@ -66,6 +69,14 @@ const ProjectPage = () => {
     ? urlFor(project.coverImage).width(1200).height(630).url()
     : undefined;
 
+  const categoryLabels = {
+    portraits: t("filters.portraits"),
+    couple: t("filters.couple"),
+    grossesse: t("filters.grossesse"),
+    mariage: t("filters.mariage"),
+    commercial: t("filters.commercial"),
+  };
+
   return (
     <>
       <SEO
@@ -79,7 +90,7 @@ const ProjectPage = () => {
       <div className={styles.projectPage}>
         <div className={styles.navigation}>
           <Link to="/portfolio" className={styles.backButton}>
-            <ArrowLeft size={20} /> Back to Portfolio
+            <ArrowLeft size={20} /> {t("project.back")}
           </Link>
         </div>
 
@@ -87,7 +98,9 @@ const ProjectPage = () => {
           <h1 className={styles.projectTitle}>{project.title}</h1>
           <div className={styles.projectMeta}>
             {project.category && (
-              <span className={styles.category}>{project.category}</span>
+              <span className={styles.category}>
+                {categoryLabels[project.category] || project.category}
+              </span>
             )}
             {project.date && (
               <span className={styles.date}>
@@ -98,7 +111,9 @@ const ProjectPage = () => {
               <span className={styles.location}>{project.location}</span>
             )}
             {project.client && (
-              <span className={styles.client}>Client: {project.client}</span>
+              <span className={styles.client}>
+                {t("project.client")}: {project.client}
+              </span>
             )}
           </div>
         </header>
@@ -114,6 +129,7 @@ const ProjectPage = () => {
             <div
               key={index}
               className={styles.galleryItem}
+              onClick={() => setLightboxIndex(index)}
             >
               <img
                 src={urlFor(image).width(800).url()}
@@ -126,6 +142,15 @@ const ProjectPage = () => {
         </div>
       </div>
       <Footer />
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={allImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={setLightboxIndex}
+        />
+      )}
     </>
   );
 };

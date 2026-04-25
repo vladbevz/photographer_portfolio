@@ -15,5 +15,11 @@
   "empty": "Aucun projet trouvé",
   "stats": {
     "projects": "projets"
+  },
+  "project": {
+    "back": "Retour au portfolio",
+    "loading": "Chargement...",
+    "notFound": "Projet introuvable",
+    "client": "Client"
   }
 }

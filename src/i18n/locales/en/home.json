@@ -20,7 +20,8 @@
   },
   "cta": {
     "title": "Let's Collaborate",
-    "text": "Follow my work or get in touch directly on Instagram to discuss your next photography project",
-    "button": "Visit Instagram"
+    "text": "Follow my work or get in touch directly to discuss your next photography project",
+    "button": "Visit Instagram",
+    "contact": "Get in Touch"
   }
 }
