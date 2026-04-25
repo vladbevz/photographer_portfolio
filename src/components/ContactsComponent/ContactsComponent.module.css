@@ -111,7 +111,8 @@
   letter-spacing: 0.5px;
   line-height: 1.1;
   position: relative;
-  padding-bottom: 1.5rem;
+  display: inline-block;
+  padding-bottom: 0.6rem;
 }
 
 .title::after {
@@ -119,7 +120,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60px;
+  width: 100%;
   height: 1px;
   background: var(--color-accent);
 }
@@ -323,10 +324,22 @@
   text-decoration: none;
   transition: color 0.3s ease;
   line-height: 1.5;
+  max-width: none;
+  margin-bottom: 0;
+  font-size: inherit;
 }
 
 .infoItem a:hover {
   color: var(--color-accent);
+}
+
+.infoMeta {
+  margin-top: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  max-width: none;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
 
 /* ===== SOCIAL LINKS ===== */

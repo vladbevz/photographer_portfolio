@@ -1,6 +1,7 @@
 // src/pages/ProjectPage.jsx
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import SEO from "../components/SEO/SEO";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { ArrowLeft } from "lucide-react";
@@ -61,8 +62,19 @@ const ProjectPage = () => {
     ...(project.gallery || [])
   ].filter(Boolean);
 
+  const coverImageUrl = project.coverImage
+    ? urlFor(project.coverImage).width(1200).height(630).url()
+    : undefined;
+
   return (
     <>
+      <SEO
+        title={project.title}
+        description={project.description || `${project.title} — fine art photography by Anastasia Syrmais.`}
+        path={`/portfolio/${slug}`}
+        image={coverImageUrl}
+        type="article"
+      />
       <Header variant="light" />
       <div className={styles.projectPage}>
         <div className={styles.navigation}>

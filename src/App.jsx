@@ -5,7 +5,7 @@ import i18n from "./i18n";
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Portfolio from './pages/Portfolio';
-import ProjectPage from './pages/ProjectPage.jsx'; // Нова сторінка для проекту
+import ProjectPage from './pages/ProjectPage.jsx';
 import Contacts from './pages/Contacts.jsx';
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/:slug" element={<ProjectPage />} /> {/* Додаємо динамічний маршрут */}
+          <Route path="/portfolio/:slug" element={<ProjectPage />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </Router>

@@ -8,7 +8,7 @@ import videoSrc from '../../assets/hero_video_740.mp4';
 import Header from '../Header/Header';
 
 const HeroVideo = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation(["home", "common"]);
 
   return (
     <section className={styles.hero}>
@@ -49,7 +49,7 @@ const HeroVideo = () => {
         
         <div className={styles.scrollIndicator}>
           <span className={styles.scrollText}>
-            {t("nav.scroll", "Scroll to explore")}
+            {t("common:nav.scroll", "Scroll to explore")}
           </span>
           <div className={styles.scrollLine}></div>
         </div>

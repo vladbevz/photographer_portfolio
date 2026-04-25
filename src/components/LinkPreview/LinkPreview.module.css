@@ -20,38 +20,85 @@
   font-size: 2rem;
   font-weight: 400;
   text-decoration: none;
-  color: #777; /* ніжно-сірий */
-  transition: color 0.4s ease, transform 0.4s ease, letter-spacing 0.4s ease;
+  color: var(--color-text-light);
+  position: relative;
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
 }
 
 .link:hover {
-  color: #111; /* стає чорним при наведенні */
-  transform: translateX(8px);
-  letter-spacing: 0.5px;
+  color: var(--color-accent);
+}
+
+.link:hover::after {
+  width: 100%;
 }
 
 .right {
-   flex: 2;
+  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7; /* дуже легкий сіруватий тон — замість білого */
-  border-radius: 0;
-  overflow: hidden; /* прибирає "мерехтіння" країв */
+  background-color: #f0ede8;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
 
 .image {
-   width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 0;
-  object-fit: cover; /* замінили contain на cover */
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.image:hover {
-  transform: scale(1.03);
-  opacity: 0.96;
+.imageFadeIn {
+  z-index: 2;
+  animation: imageEnter 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.imageFadeOut {
+  z-index: 1;
+  animation: imageLeave 0.75s ease forwards;
+}
+
+@keyframes imageEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes imageLeave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* Адаптив */
@@ -70,8 +117,7 @@
     font-size: 1.6rem;
   }
 
-  .image {
-    max-width: 100%;
+  .imageContainer {
     aspect-ratio: 16/10;
   }
 }

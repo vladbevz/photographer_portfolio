@@ -1,90 +1,69 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./LinkPreview.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-// Тимчасові зображення
 import aboutImg from "../../assets/IMG_9966.webp";
 import portfolioImg from "../../assets/photo_2026-01-26_17-50-44.webp";
 import experienceImg from "../../assets/photo_2026-01-26_17-55-41.webp";
 
+const LINKS = [
+  { id: "about",     img: aboutImg,       path: "/about" },
+  { id: "portfolio", img: portfolioImg,   path: "/portfolio" },
+  { id: "contact",   img: experienceImg,  path: "/contacts" },
+];
+
 const LinkPreview = () => {
-  const [activeLink, setActiveLink] = useState(0);
-  const [imageState, setImageState] = useState("entering");
   const { t } = useTranslation("home");
+  const [activeLink, setActiveLink] = useState(0);
+  const [imgState, setImgState] = useState({ current: 0, prev: null, key: 0 });
 
-  // Створюємо масив посилань з перекладами
-  const links = [
-    { 
-      id: "about",
-      img: aboutImg, 
-      path: "/about",
-    },
-    { 
-      id: "portfolio",
-      img: portfolioImg, 
-      path: "/portfolio",
-    },
-    { 
-      id: "contact",
-      img: experienceImg, 
-      path: "/contacts",
-    },
-  ];
-
-  useEffect(() => {
-    // Анімація зміни зображення
-    setImageState("entering");
-    const timer = setTimeout(() => {
-      setImageState("entered");
-    }, 300);
-    
-    return () => clearTimeout(timer);
-  }, [activeLink]);
+  const handleHover = (index) => {
+    if (index === imgState.current) return;
+    setActiveLink(index);
+    setImgState(s => ({
+      current: index,
+      prev: s.current,
+      key: s.key + 1,
+    }));
+  };
 
   return (
     <section className={styles.section}>
       <div className={styles.left}>
-        {links.map((link, index) => (
+        {LINKS.map((link, index) => (
           <Link
             key={link.id}
             to={link.path}
             className={`${styles.link} ${activeLink === index ? styles.active : ""}`}
-            onMouseEnter={() => setActiveLink(index)}
-            onClick={() => setActiveLink(index)}
+            onMouseEnter={() => handleHover(index)}
+            onClick={() => handleHover(index)}
           >
-            {t(`linkPreview.${link.id}`, 
-              link.id === "about" ? "About" : 
+            {t(`linkPreview.${link.id}`,
+              link.id === "about" ? "About" :
               link.id === "portfolio" ? "Portfolio" : "Contact"
             )}
           </Link>
         ))}
       </div>
-      
+
       <div className={styles.right}>
         <div className={styles.imageContainer}>
-          <img 
-            src={links[activeLink].img} 
-            alt={`${t(`linkPreview.${links[activeLink].id}`, links[activeLink].id)} preview`} 
-            className={`${styles.image} ${styles[imageState]}`}
+          {imgState.prev !== null && (
+            <img
+              key={`prev-${imgState.key}`}
+              src={LINKS[imgState.prev].img}
+              alt=""
+              aria-hidden="true"
+              className={`${styles.image} ${styles.imageFadeOut}`}
+            />
+          )}
+          <img
+            key={`curr-${imgState.key}`}
+            src={LINKS[imgState.current].img}
+            alt={t(`linkPreview.${LINKS[imgState.current].id}`, LINKS[imgState.current].id)}
+            className={`${styles.image} ${styles.imageFadeIn}`}
           />
-          
-          {/* Оверлей з текстом (розкоментуй якщо потрібно) */}
-          {/* <div className={styles.imageOverlay}>
-            <h3 className={styles.imageTitle}>
-              {t(`linkPreview.${links[activeLink].id}`, 
-                links[activeLink].id === "about" ? "About" : 
-                links[activeLink].id === "portfolio" ? "Portfolio" : "Contact"
-              )}
-            </h3>
-            <p className={styles.imageSubtitle}>
-              {t(`linkPreview.${links[activeLink].id}Subtitle`,
-                links[activeLink].id === "about" ? "Get to know the artist behind the lens" : 
-                links[activeLink].id === "portfolio" ? "Explore curated collections of fine art photography" : 
-                "Let's create something beautiful together"
-              )}
-            </p>
-          </div> */}
         </div>
       </div>
     </section>

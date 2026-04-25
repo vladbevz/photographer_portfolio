@@ -142,17 +142,17 @@ const ContactsComponent = () => {
               <Mail size={14} /> {t("info.contact", "Contact")}
             </strong>
             <a href="mailto:a.syrmais@gmail.com">a.syrmais@gmail.com</a>
-            <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-light)' }}>
+            <p className={styles.infoMeta}>
               {t("info.response", "Response within 24 hours")}
             </p>
           </div>
-          
+
           <div className={styles.infoItem}>
             <strong>
               <MapPin size={14} /> {t("info.location", "Location")}
             </strong>
             <p>Nîmes, France</p>
-            <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'var(--color-text-light)' }}>
+            <p className={styles.infoMeta}>
               {t("info.available", "Available for projects worldwide")}
             </p>
           </div>
