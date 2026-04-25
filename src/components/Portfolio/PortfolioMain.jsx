@@ -42,7 +42,7 @@ const PortfolioMain = () => {
     { id: "couple",     label: t("filters.couple",     "Couple") },
     { id: "grossesse",  label: t("filters.grossesse",  "Grossesse / Nouveau-Nés") },
     { id: "mariage",    label: t("filters.mariage",    "Mariage") },
-    { id: "business",   label: t("filters.business",   "Business") },
+    { id: "commercial", label: t("filters.commercial", "Commercial") },
   ];
 
   return (

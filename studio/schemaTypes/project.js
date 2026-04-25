@@ -61,7 +61,7 @@ export default {
           { title: "Couple",                value: "couple" },
           { title: "Grossesse / Nouveau-Nés", value: "grossesse" },
           { title: "Mariage",               value: "mariage" },
-          { title: "Business",              value: "business" },
+          { title: "Commercial",             value: "commercial" },
         ],
         layout: "radio",
       },
@@ -115,7 +115,7 @@ export default {
         couple:    "Couple",
         grossesse: "Grossesse / Nouveau-Nés",
         mariage:   "Mariage",
-        business:  "Business",
+        commercial: "Commercial",
       };
       return {
         title,
