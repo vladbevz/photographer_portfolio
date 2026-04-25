@@ -16,8 +16,8 @@ const Portfolio = () => {
         title="Portfolio"
         description={
           isFr
-            ? "Explorez les collections de photographie d'art d'Anastasia Syrmais — portraits, mode, éditorial. Photographe basée à Nîmes, disponible dans toute la France."
-            : "Explore Anastasia Syrmais' fine art photography collections — portraits, fashion, editorial. Based in Nîmes, available throughout France."
+            ? "Portraits, couple, grossesse & nouveau-nés, mariage, commercial — explorez toutes les collections d'Anastasia Syrmais, photographe basée à Nîmes, disponible dans toute la France."
+            : "Portraits, couple, maternity & newborn, wedding, commercial — explore all collections by Anastasia Syrmais, fine art photographer based in Nîmes, France."
         }
         path="/portfolio"
       />
