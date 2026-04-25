@@ -59,7 +59,7 @@ export default {
         list: [
           { title: "Portraits",             value: "portraits" },
           { title: "Couple",                value: "couple" },
-          { title: "Encainte / Nouveau né", value: "grossesse" },
+          { title: "Grossesse / Nouveau-Nés", value: "grossesse" },
           { title: "Mariage",               value: "mariage" },
           { title: "Business",              value: "business" },
         ],
@@ -113,7 +113,7 @@ export default {
       const labels = {
         portraits: "Portraits",
         couple:    "Couple",
-        grossesse: "Encainte / Nouveau né",
+        grossesse: "Grossesse / Nouveau-Nés",
         mariage:   "Mariage",
         business:  "Business",
       };
