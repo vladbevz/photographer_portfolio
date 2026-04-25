@@ -209,49 +209,57 @@
 @media (max-width: 900px) {
   .intro {
     flex-direction: column-reverse;
-    gap: 4rem;
+    gap: 3rem;
     margin: 4rem auto 5rem;
   }
-  
+
   .text {
     padding-left: 0;
     padding-top: 2rem;
     border-top: 1px solid var(--color-border);
   }
-  
+
   .text::before {
     display: none;
   }
-  
+
   .text h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
   }
-  
+
   .text h2::after {
     display: none;
   }
-  
+
   .text p {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
-  
+
   .text p:first-of-type {
     font-size: 1.1rem;
   }
-  
+
   .imageWrapper {
-    width: 80%;
+    width: 85%;
     max-width: 500px;
     margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .imageWrapper::before,
   .imageWrapper::after {
     display: none;
   }
-  
+
+  .imageCaption {
+    position: static;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+
   .ctaButton {
     display: block;
     text-align: center;

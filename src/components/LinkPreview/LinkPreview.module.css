@@ -105,19 +105,29 @@
 @media (max-width: 900px) {
   .section {
     flex-direction: column;
-    text-align: center;
-    padding: 3rem 2rem;
+    justify-content: flex-start;
+    padding: 2.5rem 1.5rem;
+    min-height: unset;
+    gap: 2.5rem;
+  }
+
+  .right {
+    width: 100%;
+    order: 1;
   }
 
   .left {
     padding-left: 0;
+    align-items: center;
+    order: 2;
   }
 
   .link {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    align-self: center;
   }
 
   .imageContainer {
-    aspect-ratio: 16/10;
+    aspect-ratio: 4/3;
   }
 }
