@@ -53,18 +53,17 @@ export default {
     },
     {
       name: "category",
-      title: "Category",
+      title: "Catégorie",
       type: "string",
       options: {
         list: [
-          { title: "Portrait", value: "portrait" },
-          { title: "Wedding", value: "wedding" },
-          { title: "Commercial", value: "commercial" },
-          { title: "Editorial", value: "editorial" },
-          { title: "Fine Art", value: "fineart" },
-          { title: "Nature", value: "nature" },
+          { title: "Portraits",             value: "portraits" },
+          { title: "Couple",                value: "couple" },
+          { title: "Encainte / Nouveau né", value: "grossesse" },
+          { title: "Mariage",               value: "mariage" },
+          { title: "Business",              value: "business" },
         ],
-        layout: "dropdown",
+        layout: "radio",
       },
       validation: (Rule) => Rule.required(),
     },
@@ -111,10 +110,17 @@ export default {
     },
     prepare(selection) {
       const { title, category, media } = selection;
+      const labels = {
+        portraits: "Portraits",
+        couple:    "Couple",
+        grossesse: "Encainte / Nouveau né",
+        mariage:   "Mariage",
+        business:  "Business",
+      };
       return {
-        title: title,
-        subtitle: category.charAt(0).toUpperCase() + category.slice(1),
-        media: media,
+        title,
+        subtitle: labels[category] ?? category,
+        media,
       };
     },
   },
