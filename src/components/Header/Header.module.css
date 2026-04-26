@@ -24,6 +24,23 @@
   border-bottom: 1px solid var(--color-border-light);
 }
 
+/* Прозорий варіант для світлих сторінок (about, contact) */
+.overlay {
+  background: transparent;
+}
+
+.overlay .center {
+  color: var(--color-text-primary);
+}
+
+.overlay .menu a {
+  color: var(--color-text-secondary);
+}
+
+.overlay .burger span {
+  background: var(--color-text-primary);
+}
+
 /* Додамо ефект при скролі на головній (додамо через JS пізніше) */
 .header.scrolled {
   background: var(--color-overlay);

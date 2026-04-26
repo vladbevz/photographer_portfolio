@@ -21,7 +21,7 @@ const About = () => {
         }
         path="/about"
       />
-      <Header variant="light" />
+      <Header variant="overlay" />
       <AboutIntro />
       <AboutCTA />
       <Footer />

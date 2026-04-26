@@ -12,10 +12,9 @@ const Header = ({ variant = "transparent" }) => {
   const { t } = useTranslation("common");
 
   useEffect(() => {
-    if (variant === "transparent") {
+    if (variant === "transparent" || variant === "overlay") {
       const handleScroll = () => {
-        const isScrolled = window.scrollY > 50;
-        setScrolled(isScrolled);
+        setScrolled(window.scrollY > 50);
       };
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
@@ -29,7 +28,9 @@ const Header = ({ variant = "transparent" }) => {
   return (
     <header
       className={`${styles.header} ${
-        variant === "light" ? styles.light : styles.transparent
+        variant === "light" ? styles.light :
+        variant === "overlay" ? styles.overlay :
+        styles.transparent
       } ${scrolled ? styles.scrolled : ""}`}
     >
       <nav className={styles.nav}>

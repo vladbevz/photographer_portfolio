@@ -10,13 +10,13 @@
 
 /* ===== IMAGE SIDE ===== */
 .imageSide {
-  flex: 1;
+  flex: 0 0 38%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
+  padding: 8rem 3rem 4rem;
   position: relative;
-  background: var(--color-bg-primary); /* Змінили на такий же як форма */
+  background: var(--color-bg-primary);
 }
 
 /* Декоративні рамки для зображення */
@@ -78,7 +78,7 @@
 
 .formSide {
   flex: 1;
-  padding: 5rem 4rem;
+  padding: 9rem 4rem 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
