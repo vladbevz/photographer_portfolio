@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 const SITE_NAME = 'Anastasia Syrmais Photographie';
-const BASE_URL = 'https://anastasia-syrmais.com';
+const BASE_URL = 'https://anastasiasyrmais.pro';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const SEO = ({
