@@ -293,11 +293,11 @@
   
   .imageWrapper {
     width: 90%;
-    max-height: 260px;
+    max-height: 220px;
   }
 
   .imageWrapper img {
-    height: 260px;
+    height: 220px;
     object-fit: cover;
   }
 }
