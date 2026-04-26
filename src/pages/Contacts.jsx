@@ -20,7 +20,7 @@ const Contacts = () => {
         }
         path="/contacts"
       />
-      <Header variant="overlay" />
+      <Header variant="light" />
       <ContactsComponent />
       <Footer />
     </>

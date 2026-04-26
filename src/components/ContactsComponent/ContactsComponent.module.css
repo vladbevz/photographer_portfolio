@@ -10,11 +10,11 @@
 
 /* ===== IMAGE SIDE ===== */
 .imageSide {
-  flex: 0 0 44%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 3rem 4rem;
+  padding: 4rem;
   position: relative;
   background: var(--color-bg-primary);
 }
@@ -78,10 +78,12 @@
 
 .formSide {
   flex: 1;
-  padding: 9rem 5rem 5rem 4rem;
+  padding: 5rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
   background: var(--color-bg-primary);
   position: relative;
 }
