@@ -394,8 +394,8 @@
   }
   
   .imageSide {
-    height: 400px;
-    padding: 2rem;
+    height: 240px;
+    padding: 1.5rem;
   }
   
   .imageWrapper {
@@ -441,8 +441,8 @@
 
 @media (max-width: 480px) {
   .imageSide {
-    height: 300px;
-    padding: 1.5rem;
+    height: 200px;
+    padding: 1rem;
   }
   
   .formSide {

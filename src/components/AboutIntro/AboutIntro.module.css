@@ -293,6 +293,12 @@
   
   .imageWrapper {
     width: 90%;
+    max-height: 260px;
+  }
+
+  .imageWrapper img {
+    height: 260px;
+    object-fit: cover;
   }
 }
 
