@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import styles from "./AboutIntro.module.css";
-import aboutImg from "../../assets/about_portret.webp"; 
+import aboutImg from "../../assets/about_portret.webp";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const AboutIntro = () => {
   const { t } = useTranslation("about");
+  const textRef = useScrollReveal();
+  const imageRef = useScrollReveal();
 
   return (
     <section className={styles.intro}>
-      <div className={styles.text}>
+      <div className={styles.text} ref={textRef}>
         <h2>{t("intro.welcome", "Welcome")}</h2>
         <p>
           {t("intro.paragraph1", "I'm Anastasiia, a professional photographer and videographer originally from Ukraine, now based in Europe. I work with individuals and businesses, creating authentic, elegant, and emotionally powerful imagery.")}
@@ -28,7 +31,7 @@ const AboutIntro = () => {
         </Link>
       </div>
       
-      <div className={styles.imageWrapper}>
+      <div className={styles.imageWrapper} ref={imageRef}>
         <img 
           src={aboutImg} 
           alt={t("intro.imageAlt", "Anastasia Syrmais, professional photographer")} 

@@ -2,13 +2,15 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Instagram } from "lucide-react";
 import styles from "./AboutCTA.module.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const AboutCTA = () => {
   const { t } = useTranslation("about");
+  const ctaRef = useScrollReveal();
 
   return (
     <section className={styles.cta}>
-      <div className={styles.ctaContainer}>
+      <div className={styles.ctaContainer} ref={ctaRef}>
         <h3>{t("cta.title", "Stay Connected")}</h3>
         <p className={styles.subtitle}>
           {t("cta.subtitle", "Follow my latest work, behind-the-scenes moments, and photography insights on Instagram")}

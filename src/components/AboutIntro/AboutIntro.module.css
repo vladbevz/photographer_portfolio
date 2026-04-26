@@ -75,6 +75,10 @@
 }
 
 /* ===== IMAGE WRAPPER ===== */
+.imageWrapper:global(.reveal) {
+  transition-delay: 0.15s;
+}
+
 .imageWrapper {
   flex: 0 0 45%;
   position: relative;
