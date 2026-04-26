@@ -72,6 +72,10 @@
 }
 
 /* ===== FORM SIDE ===== */
+.formSide:global(.reveal) {
+  transition-delay: 0.15s;
+}
+
 .formSide {
   flex: 1;
   padding: 5rem 4rem;

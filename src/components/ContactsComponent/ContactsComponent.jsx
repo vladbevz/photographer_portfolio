@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Instagram, Send, Loader2, CheckCircle, XCircle, Mail, MapPin } from "lucide-react";
 import emailjs from "emailjs-com";
 import styles from "./ContactsComponent.module.css";
 import contactImg from "../../assets/experience.webp";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const ContactsComponent = () => {
   const { t } = useTranslation("contacts");
+  const imageRef = useScrollReveal();
+  const formRef = useScrollReveal();
   const [form, setForm] = useState({ 
     name: "", 
     email: "", 
@@ -48,7 +51,7 @@ const ContactsComponent = () => {
 
   return (
     <section className={styles.contactSection}>
-      <div className={styles.imageSide}>
+      <div className={styles.imageSide} ref={imageRef}>
         <div className={styles.imageWrapper}>
           <img 
             src={contactImg} 
@@ -58,7 +61,7 @@ const ContactsComponent = () => {
         </div>
       </div>
 
-      <div className={styles.formSide}>
+      <div className={styles.formSide} ref={formRef}>
         <div>
           <h2 className={styles.title}>
             {t("title", "Get in Touch")}

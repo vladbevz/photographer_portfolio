@@ -6,28 +6,30 @@ import useScrollReveal from "../../hooks/useScrollReveal";
 
 const AboutCTA = () => {
   const { t } = useTranslation("about");
-  const ctaRef = useScrollReveal();
+  const titleRef = useScrollReveal();
+  const statsRef = useScrollReveal();
 
   return (
     <section className={styles.cta}>
-      <div className={styles.ctaContainer} ref={ctaRef}>
-        <h3>{t("cta.title", "Stay Connected")}</h3>
-        <p className={styles.subtitle}>
-          {t("cta.subtitle", "Follow my latest work, behind-the-scenes moments, and photography insights on Instagram")}
-        </p>
-        <a
-          href="https://instagram.com/syrmais__photography/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.button}
-          aria-label={t("cta.button", "Follow on Instagram")}
-        >
-          <Instagram size={18} className={styles.instagramIcon} />
-          {t("cta.button", "Follow on Instagram")}
-        </a>
-        
-        {/* Секція зі статистикою */}
-        <div className={styles.socialStats}>
+      <div className={styles.ctaContainer}>
+        <div ref={titleRef}>
+          <h3>{t("cta.title", "Stay Connected")}</h3>
+          <p className={styles.subtitle}>
+            {t("cta.subtitle", "Follow my latest work, behind-the-scenes moments, and photography insights on Instagram")}
+          </p>
+          <a
+            href="https://instagram.com/syrmais__photography/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.button}
+            aria-label={t("cta.button", "Follow on Instagram")}
+          >
+            <Instagram size={18} className={styles.instagramIcon} />
+            {t("cta.button", "Follow on Instagram")}
+          </a>
+        </div>
+
+        <div className={styles.socialStats} ref={statsRef}>
           <div className={styles.stat}>
             <div className={styles.statNumber}>30+</div>
             <div className={styles.statLabel}>

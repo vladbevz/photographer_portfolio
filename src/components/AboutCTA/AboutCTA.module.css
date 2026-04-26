@@ -150,6 +150,10 @@
 }
 
 /* ===== SOCIAL STATS (опціонально) ===== */
+.socialStats:global(.reveal) {
+  transition-delay: 0.2s;
+}
+
 .socialStats {
   display: flex;
   justify-content: center;
