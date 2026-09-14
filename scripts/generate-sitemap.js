@@ -23,7 +23,7 @@ if (existsSync(envLocalPath)) {
   }
 }
 
-const BASE_URL = "https://anastasiasyrmais.pro";
+const BASE_URL = "https://www.anastasiasyrmais.pro";
 
 const STATIC_PAGES = [
   { loc: "/", changefreq: "monthly", priority: "1.0" },
