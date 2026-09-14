@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://anastasiasyrmais.pro/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/"/>
@@ -14,7 +14,7 @@
 
   <url>
     <loc>https://anastasiasyrmais.pro/about</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/about"/>
@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://anastasiasyrmais.pro/portfolio</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/portfolio"/>
@@ -34,7 +34,7 @@
 
   <url>
     <loc>https://anastasiasyrmais.pro/contacts</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/contacts"/>
@@ -42,4 +42,23 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://anastasiasyrmais.pro/contacts"/>
   </url>
 
+  <url>
+    <loc>https://anastasiasyrmais.pro/portfolio/old-money-shooting</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/portfolio/old-money-shooting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anastasiasyrmais.pro/portfolio/old-money-shooting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anastasiasyrmais.pro/portfolio/old-money-shooting"/>
+  </url>
+
+  <url>
+    <loc>https://anastasiasyrmais.pro/portfolio/mariage</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://anastasiasyrmais.pro/portfolio/mariage"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://anastasiasyrmais.pro/portfolio/mariage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://anastasiasyrmais.pro/portfolio/mariage"/>
+  </url>
 </urlset>
