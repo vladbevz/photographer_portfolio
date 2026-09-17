@@ -5,7 +5,7 @@ import { Instagram, ArrowRight } from "lucide-react";
 import styles from "./CallToAction.module.css";
 
 const CTA_IMAGE_URL =
-  "https://cdn.sanity.io/images/1pizw8xe/production/b0dc98eda7f925f148286e289717f954c201bfb8-4000x6000.jpg?w=900&auto=format";
+  "https://cdn.sanity.io/images/1pizw8xe/production/2d3d787377ab87cfeb8027a71fcd5bbf5dbff204-3925x5887.jpg?w=900&auto=format";
 
 const CallToAction = () => {
   const { t } = useTranslation("home");
