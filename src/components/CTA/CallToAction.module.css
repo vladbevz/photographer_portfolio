@@ -1,23 +1,35 @@
 /* ===== CTA SECTION ===== */
 .section {
+  max-width: var(--container-max);
+  margin: 0 auto;
   padding: 5rem 2rem 6rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
   background: var(--color-bg-primary);
 }
 
-.panel {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border-light);
-  border-radius: 20px;
-  padding: 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+/* ===== IMAGE ===== */
+.imageWrap {
+  flex: 1.1;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 28px 50px -28px rgba(42, 37, 32, 0.3);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===== TEXT ===== */
+.text {
+  flex: 1;
+}
+
 .title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3.4vw, 2.6rem);
@@ -51,7 +63,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.95rem 1.75rem;
   transition: var(--transition-smooth);
 }
@@ -78,37 +90,18 @@
   color: var(--color-accent);
 }
 
-/* ===== IMAGE ===== */
-.imageWrap {
-  display: flex;
-  justify-content: center;
-}
-
-.frame {
-  width: 100%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  border-radius: 12px;
-  border: 8px solid var(--color-bg-primary);
-  outline: 1px solid var(--color-border);
-  box-shadow: 0 24px 48px -24px rgba(42, 37, 32, 0.3);
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 78%;
-  display: block;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .panel {
-    grid-template-columns: 1fr;
-    padding: 2.5rem;
+  .section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
     text-align: center;
-    border-radius: 16px;
+  }
+
+  .imageWrap {
+    width: 100%;
+    aspect-ratio: 4/3;
   }
 
   .body {
@@ -119,19 +112,11 @@
   .buttons {
     justify-content: center;
   }
-
-  .imageWrap {
-    order: -1;
-  }
 }
 
 @media (max-width: 480px) {
   .section {
     padding: 3rem 1.25rem 4rem;
-  }
-
-  .panel {
-    padding: 1.75rem;
   }
 
   .buttons {

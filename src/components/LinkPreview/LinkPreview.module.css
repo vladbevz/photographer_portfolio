@@ -33,21 +33,13 @@
   align-items: center;
   gap: 1.25rem;
   text-decoration: none;
-  padding: 1.35rem 0;
+  padding: 1.75rem 0;
   border-top: 1px solid var(--color-border-light);
   transition: var(--transition-smooth);
 }
 
 .list a:last-child {
   border-bottom: 1px solid var(--color-border-light);
-}
-
-.index {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--color-accent);
-  min-width: 1.75rem;
 }
 
 .linkBody {
@@ -60,7 +52,7 @@
 
 .linkTitle {
   font-family: 'Playfair Display', serif;
-  font-size: 1.85rem;
+  font-size: 2.6rem;
   font-weight: 500;
   color: var(--color-text-primary);
   line-height: 1.1;
@@ -167,7 +159,7 @@
   }
 
   .linkTitle {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .imageContainer {

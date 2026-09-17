@@ -41,7 +41,6 @@ const LinkPreview = () => {
               onMouseEnter={() => handleHover(index)}
               onFocus={() => handleHover(index)}
             >
-              <span className={styles.index}>0{index + 1}</span>
               <span className={styles.linkBody}>
                 <span className={styles.linkTitle}>
                   {t(`linkPreview.${link.id}`, link.id)}
