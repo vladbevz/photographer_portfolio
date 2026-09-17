@@ -22,7 +22,9 @@
     "copyright": "© {{year}} Anastasia Syrmais",
     "madeBy": "Website by",
     "atelierCode": "AtelierCode",
-    "scrollTop": "Back to top"
+    "scrollTop": "Back to top",
+    "location": "Nîmes, France",
+    "instagram": "Instagram"
   },
   "buttons": {
     "viewPortfolio": "View Portfolio",

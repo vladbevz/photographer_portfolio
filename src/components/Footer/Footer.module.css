@@ -16,7 +16,7 @@
 .content {
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -42,6 +42,10 @@
 }
 
 .creator {
+  color: var(--color-text-light);
+}
+
+.location {
   color: var(--color-text-light);
 }
 

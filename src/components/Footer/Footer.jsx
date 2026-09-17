@@ -30,7 +30,20 @@ const Footer = () => {
             </a>
           </span>
           <span className={styles.divider}>•</span>
+          <span className={styles.location}>
+            {t("footer.location", "Nîmes, France")}
+          </span>
         </div>
+
+        <a
+          href="https://www.instagram.com/syrmais__photography"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.instagramLink}
+          aria-label={t("footer.instagram", "Instagram")}
+        >
+          <Instagram size={16} />
+        </a>
       </div>
 
       <button

@@ -63,9 +63,9 @@ const ContactsComponent = () => {
 
       <div className={styles.formSide} ref={formRef}>
         <div>
-          <h2 className={styles.title}>
+          <h1 className={styles.title}>
             {t("title", "Get in Touch")}
-          </h2>
+          </h1>
           <p className={styles.subtitle}>
             {t("subtitle", "Ready to create something beautiful? Share your vision and let's bring it to life together.")}
           </p>
