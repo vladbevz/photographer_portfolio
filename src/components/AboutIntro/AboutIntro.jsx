@@ -14,7 +14,7 @@ const AboutIntro = () => {
   return (
     <section className={styles.intro}>
       <div className={styles.text} ref={textRef}>
-        <h1>{t("intro.heading", "Photographer & Videographer in Nîmes")}</h1>
+        <h1>{t("intro.heading", "Capturing Emotion, Elevating the Moment")}</h1>
         <p>
           {t("intro.paragraph1", "I'm Anastasiia, a professional photographer and videographer based in Nîmes, southern France. I work with individuals and businesses across France, creating authentic, elegant, and emotionally powerful imagery.")}
         </p>
