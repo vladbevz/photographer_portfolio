@@ -1,7 +1,8 @@
 
 {
-  "title": "Prendre contact",
-  "subtitle": "Prêt à créer quelque chose de beau ? Partagez votre vision et donnons-lui vie ensemble.",
+  "eyebrow": "Prendre contact",
+  "title": "Créons quelque chose de beau, ensemble",
+  "subtitle": "Basée à Nîmes, disponible pour des séances dans toute la France. Partagez votre vision ci-dessous — je réponds personnellement à chaque message, sous 24 heures.",
   "form": {
     "name": "Nom complet",
     "email": "Adresse email",
@@ -15,7 +16,7 @@
     "contact": "Contact",
     "response": "Réponse sous 24 heures",
     "location": "Localisation",
-    "available": "Disponible pour des projets dans le monde entier"
+    "available": "Disponible dans toute la France"
   },
   "social": {
     "instagram": "Instagram",

@@ -1,6 +1,7 @@
 {
-  "title": "Get in Touch",
-  "subtitle": "Ready to create something beautiful? Share your vision and let's bring it to life together.",
+  "eyebrow": "Get in Touch",
+  "title": "Let's create something beautiful, together",
+  "subtitle": "Based in Nîmes, available for sessions throughout France. Share your vision below — I personally reply to every message within 24 hours.",
   "form": {
     "name": "Full Name",
     "email": "Email Address",
@@ -14,7 +15,7 @@
     "contact": "Contact",
     "response": "Response within 24 hours",
     "location": "Location",
-    "available": "Available for projects worldwide"
+    "available": "Available throughout France"
   },
   "social": {
     "instagram": "Instagram",
