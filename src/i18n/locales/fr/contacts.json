@@ -5,8 +5,11 @@
   "subtitle": "Basée à Nîmes, disponible pour des séances dans toute la France. Partagez votre vision ci-dessous — je réponds personnellement à chaque message, sous 24 heures.",
   "form": {
     "name": "Nom complet",
+    "namePlaceholder": "Camille Dubois",
     "email": "Adresse email",
+    "emailPlaceholder": "vous@exemple.com",
     "message": "Votre message",
+    "messagePlaceholder": "Parlez-moi de votre projet…",
     "submit": "Envoyer le message",
     "sending": "Envoi en cours",
     "success": "Votre message a été envoyé avec succès !",

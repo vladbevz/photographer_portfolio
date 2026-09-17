@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Instagram, Send, Loader2, CheckCircle, XCircle, Mail, MapPin } from "lucide-react";
+import { Instagram, Send, Loader2, CheckCircle, XCircle, Mail, MapPin, Phone } from "lucide-react";
 import emailjs from "emailjs-com";
 import styles from "./ContactsComponent.module.css";
 import useScrollReveal from "../../hooks/useScrollReveal";
@@ -81,6 +81,7 @@ const ContactsComponent = () => {
               id="contact-name"
               type="text"
               name="name"
+              placeholder={t("form.namePlaceholder", "Camille Dubois")}
               value={form.name}
               onChange={handleChange}
               required
@@ -93,6 +94,7 @@ const ContactsComponent = () => {
               id="contact-email"
               type="email"
               name="email"
+              placeholder={t("form.emailPlaceholder", "vous@exemple.com")}
               value={form.email}
               onChange={handleChange}
               required
@@ -104,6 +106,7 @@ const ContactsComponent = () => {
             <textarea
               id="contact-message"
               name="message"
+              placeholder={t("form.messagePlaceholder", "Parlez-moi de votre projet…")}
               value={form.message}
               onChange={handleChange}
               rows={4}
@@ -150,7 +153,12 @@ const ContactsComponent = () => {
             <div className={styles.cardLabel}>
               <Mail size={14} /> {t("info.contact", "Contact")}
             </div>
-            <a href="mailto:a.syrmais@gmail.com">a.syrmais@gmail.com</a>
+            <a className={styles.cardLine} href="mailto:a.syrmais@gmail.com">
+              <Mail size={13} /> a.syrmais@gmail.com
+            </a>
+            <a className={styles.cardLine} href="tel:+33777760455">
+              <Phone size={13} /> +33 7 77 76 04 55
+            </a>
             <p className={styles.cardSub}>{t("info.response", "Response within 24 hours")}</p>
           </div>
 

@@ -117,6 +117,12 @@
   min-height: 108px;
 }
 
+.form input::placeholder,
+.form textarea::placeholder {
+  color: var(--color-text-light);
+  opacity: 0.7;
+}
+
 .form input:focus,
 .form textarea:focus {
   outline: none;
@@ -223,6 +229,9 @@
   border: 1px solid var(--color-border-light);
   border-radius: 12px;
   padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .cardLabel {
@@ -256,8 +265,18 @@
   color: var(--color-accent);
 }
 
+.cardLine {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cardLine svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
 .cardSub {
-  margin-top: 0.3rem !important;
   font-size: 0.85rem !important;
   color: var(--color-text-light) !important;
 }

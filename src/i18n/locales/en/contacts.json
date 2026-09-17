@@ -4,8 +4,11 @@
   "subtitle": "Based in Nîmes, available for sessions throughout France. Share your vision below — I personally reply to every message within 24 hours.",
   "form": {
     "name": "Full Name",
+    "namePlaceholder": "Jane Doe",
     "email": "Email Address",
+    "emailPlaceholder": "you@example.com",
     "message": "Your Message",
+    "messagePlaceholder": "Tell me about your project…",
     "submit": "Send Message",
     "sending": "Sending Message",
     "success": "Your message has been sent successfully!",
