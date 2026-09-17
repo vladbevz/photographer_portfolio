@@ -14,7 +14,11 @@ const CallToAction = () => {
     <section className={styles.section}>
       <div className={styles.imageSide}>
         <div className={styles.imageWrap}>
-          <img src={CTA_IMAGE_URL} alt="" className={styles.image} />
+          <img
+            src={CTA_IMAGE_URL}
+            alt={t("cta.imageAlt", "Newlyweds embracing joyfully outside the town hall after their wedding")}
+            className={styles.image}
+          />
         </div>
       </div>
 
