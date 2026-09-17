@@ -15,10 +15,21 @@
 /* Контейнер для вмісту */
 .content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
   max-width: var(--container-max);
   margin: 0 auto;
+  /* залишає місце для фіксованої кнопки "нагору" в правому нижньому куті */
+  padding-right: 3.5rem;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-text-light);
 }
 
 /* ===== TEXT GROUP (в одну лінію) ===== */
@@ -69,7 +80,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 0.5rem;
 }
 
 .instagramLink:hover {
@@ -140,16 +150,20 @@
   
   .content {
     width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding-right: 0;
   }
-  
+
   .textGroup {
     gap: 0.5rem;
+    justify-content: center;
   }
-  
-  .instagramLink {
-    margin-left: 0;
+
+  .rightGroup {
+    justify-content: center;
   }
-  
+
   /* Кнопка скролу залишається fixed навіть на мобільних */
   .topButton {
     position: fixed !important;

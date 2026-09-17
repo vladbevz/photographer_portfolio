@@ -29,21 +29,22 @@ const Footer = () => {
               {t("footer.atelierCode", "AtelierCode")}
             </a>
           </span>
-          <span className={styles.divider}>•</span>
+        </div>
+
+        <div className={styles.rightGroup}>
           <span className={styles.location}>
             {t("footer.location", "Nîmes, France")}
           </span>
+          <a
+            href="https://www.instagram.com/syrmais__photography"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.instagramLink}
+            aria-label={t("footer.instagram", "Instagram")}
+          >
+            <Instagram size={16} />
+          </a>
         </div>
-
-        <a
-          href="https://www.instagram.com/syrmais__photography"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.instagramLink}
-          aria-label={t("footer.instagram", "Instagram")}
-        >
-          <Instagram size={16} />
-        </a>
       </div>
 
       <button

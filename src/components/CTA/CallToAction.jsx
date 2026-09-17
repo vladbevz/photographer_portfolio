@@ -12,8 +12,10 @@ const CallToAction = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.imageWrap}>
-        <img src={CTA_IMAGE_URL} alt="" className={styles.image} />
+      <div className={styles.imageSide}>
+        <div className={styles.imageWrap}>
+          <img src={CTA_IMAGE_URL} alt="" className={styles.image} />
+        </div>
       </div>
 
       <div className={styles.text}>
