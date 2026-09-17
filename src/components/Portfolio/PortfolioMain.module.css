@@ -42,9 +42,9 @@
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   color: var(--color-text-secondary);
-  max-width: 500px;
+  max-width: 640px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .galleryContainer {
