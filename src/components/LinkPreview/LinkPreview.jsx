@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import styles from "./LinkPreview.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { ArrowRight } from "lucide-react";
 
 import aboutImg from "../../assets/IMG_9966.webp";
 import portfolioImg from "../../assets/photo_2026-01-26_17-50-44.webp";
 import experienceImg from "../../assets/photo_2026-01-26_17-55-41.webp";
 
 const LINKS = [
-  { id: "about",     img: aboutImg,       path: "/about" },
-  { id: "portfolio", img: portfolioImg,   path: "/portfolio" },
-  { id: "contact",   img: experienceImg,  path: "/contacts" },
+  { id: "about", img: aboutImg, path: "/about" },
+  { id: "portfolio", img: portfolioImg, path: "/portfolio" },
+  { id: "contact", img: experienceImg, path: "/contacts" },
 ];
 
 const LinkPreview = () => {
   const { t } = useTranslation("home");
-  const [activeLink, setActiveLink] = useState(0);
   const [imgState, setImgState] = useState({ current: 0, prev: null, key: 0 });
 
   const handleHover = (index) => {
     if (index === imgState.current) return;
-    setActiveLink(index);
-    setImgState(s => ({
+    setImgState((s) => ({
       current: index,
       prev: s.current,
       key: s.key + 1,
@@ -31,20 +30,29 @@ const LinkPreview = () => {
   return (
     <section className={styles.section}>
       <div className={styles.left}>
-        {LINKS.map((link, index) => (
-          <Link
-            key={link.id}
-            to={link.path}
-            className={`${styles.link} ${activeLink === index ? styles.active : ""}`}
-            onMouseEnter={() => handleHover(index)}
-            onClick={() => handleHover(index)}
-          >
-            {t(`linkPreview.${link.id}`,
-              link.id === "about" ? "About" :
-              link.id === "portfolio" ? "Portfolio" : "Contact"
-            )}
-          </Link>
-        ))}
+        <p className={styles.eyebrow}>{t("linkPreview.eyebrow", "Explorer")}</p>
+
+        <nav className={styles.list}>
+          {LINKS.map((link, index) => (
+            <Link
+              key={link.id}
+              to={link.path}
+              className={`${styles.link} ${imgState.current === index ? styles.active : ""}`}
+              onMouseEnter={() => handleHover(index)}
+              onFocus={() => handleHover(index)}
+            >
+              <span className={styles.linkBody}>
+                <span className={styles.linkTitle}>
+                  {t(`linkPreview.${link.id}`, link.id)}
+                </span>
+                <span className={styles.linkSubtitle}>
+                  {t(`linkPreview.${link.id}Subtitle`, "")}
+                </span>
+              </span>
+              <ArrowRight size={18} className={styles.arrow} />
+            </Link>
+          ))}
+        </nav>
       </div>
 
       <div className={styles.right}>

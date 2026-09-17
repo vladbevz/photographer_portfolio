@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Instagram, Send, Loader2, CheckCircle, XCircle, Mail, MapPin } from "lucide-react";
+import { Instagram, Send, Loader2, CheckCircle, XCircle, Mail, MapPin, Phone } from "lucide-react";
 import emailjs from "emailjs-com";
 import styles from "./ContactsComponent.module.css";
-import contactImg from "../../assets/experience.webp";
 import useScrollReveal from "../../hooks/useScrollReveal";
+
+const PORTRAIT_URL =
+  "https://cdn.sanity.io/images/1pizw8xe/production/55a176228a5733dd9f2ca82d0e6e9825b9ea26a4-4000x6000.jpg?w=800&auto=format";
 
 const ContactsComponent = () => {
   const { t } = useTranslation("contacts");
-  const imageRef = useScrollReveal();
-  const formRef = useScrollReveal();
-  const [form, setForm] = useState({ 
-    name: "", 
-    email: "", 
-    message: "" 
+  const introRef = useScrollReveal();
+  const panelRef = useScrollReveal();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
   const [status, setStatus] = useState("idle");
 
@@ -51,77 +53,84 @@ const ContactsComponent = () => {
 
   return (
     <section className={styles.contactSection}>
-      <div className={styles.imageSide} ref={imageRef}>
-        <div className={styles.imageWrapper}>
-          <img 
-            src={contactImg} 
-            alt={t("form.imageAlt", "Photography studio")} 
-            className={styles.image} 
-          />
+      <div className={styles.top} ref={introRef}>
+        <div className={styles.portraitWrap}>
+          <div className={styles.portraitFrame}>
+            <img
+              src={PORTRAIT_URL}
+              alt={t("form.imageAlt", "Anastasia Syrmais, photographer")}
+              className={styles.portraitImg}
+            />
+          </div>
+        </div>
+
+        <div className={styles.intro}>
+          <p className={styles.eyebrow}>{t("eyebrow", "Get in Touch")}</p>
+          <h1 className={styles.title}>{t("title", "Let's create something beautiful, together")}</h1>
+          <p className={styles.subtitle}>
+            {t("subtitle", "Based in Nîmes, available for sessions throughout France. Share your vision below — I personally reply to every message within 24 hours.")}
+          </p>
         </div>
       </div>
 
-      <div className={styles.formSide} ref={formRef}>
-        <div>
-          <h2 className={styles.title}>
-            {t("title", "Get in Touch")}
-          </h2>
-          <p className={styles.subtitle}>
-            {t("subtitle", "Ready to create something beautiful? Share your vision and let's bring it to life together.")}
-          </p>
-        </div>
-
+      <div className={styles.panel} ref={panelRef}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
+            <label htmlFor="contact-name">{t("form.name", "Full Name")}</label>
             <input
+              id="contact-name"
               type="text"
               name="name"
-              placeholder=" "
+              placeholder={t("form.namePlaceholder", "Camille Dubois")}
               value={form.name}
               onChange={handleChange}
               required
             />
-            <label>{t("form.name", "Full Name")}</label>
           </div>
-          
+
           <div className={styles.formGroup}>
+            <label htmlFor="contact-email">{t("form.email", "Email Address")}</label>
             <input
+              id="contact-email"
               type="email"
               name="email"
-              placeholder=" "
+              placeholder={t("form.emailPlaceholder", "vous@exemple.com")}
               value={form.email}
               onChange={handleChange}
               required
             />
-            <label>{t("form.email", "Email Address")}</label>
           </div>
-          
+
           <div className={styles.formGroup}>
+            <label htmlFor="contact-message">{t("form.message", "Your Message")}</label>
             <textarea
+              id="contact-message"
               name="message"
-              placeholder=" "
+              placeholder={t("form.messagePlaceholder", "Parlez-moi de votre projet…")}
               value={form.message}
               onChange={handleChange}
               rows={4}
               required
             />
-            <label>{t("form.message", "Your Message")}</label>
           </div>
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className={`${styles.submitBtn} ${
-              status === "loading" ? styles.loading : ""
-            }`}
+            className={styles.submitBtn}
           >
             {status === "loading" ? (
               <>
-                <Loader2 className={styles.spinner} size={20} />
+                <Loader2 className={styles.spinner} size={18} />
                 {t("form.sending", "Sending Message")}
               </>
             ) : (
-              t("form.submit", "Send Message")
+              <>
+                {t("form.submit", "Send Message")}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="16" height="16">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </>
             )}
           </button>
 
@@ -139,45 +148,58 @@ const ContactsComponent = () => {
           )}
         </form>
 
-        <div className={styles.info}>
-          <div className={styles.infoItem}>
-            <strong>
+        <div className={styles.side}>
+          <div className={styles.card}>
+            <div className={styles.cardLabel}>
               <Mail size={14} /> {t("info.contact", "Contact")}
-            </strong>
-            <a href="mailto:a.syrmais@gmail.com">a.syrmais@gmail.com</a>
-            <p className={styles.infoMeta}>
-              {t("info.response", "Response within 24 hours")}
-            </p>
+            </div>
+            <a className={styles.cardLine} href="mailto:a.syrmais@gmail.com">
+              <Mail size={13} /> a.syrmais@gmail.com
+            </a>
+            <a className={styles.cardLine} href="tel:+33777760455">
+              <Phone size={13} /> +33 7 77 76 04 55
+            </a>
+            <p className={styles.cardSub}>{t("info.response", "Response within 24 hours")}</p>
           </div>
 
-          <div className={styles.infoItem}>
-            <strong>
+          <div className={styles.card}>
+            <div className={styles.cardLabel}>
               <MapPin size={14} /> {t("info.location", "Location")}
-            </strong>
+            </div>
             <p>Nîmes, France</p>
-            <p className={styles.infoMeta}>
-              {t("info.available", "Available for projects worldwide")}
-            </p>
+            <p className={styles.cardSub}>{t("info.available", "Available throughout France")}</p>
           </div>
-        </div>
 
-        <div className={styles.socials}>
-          <a
-            href="https://www.instagram.com/syrmais__photography?igsh=MTc5bjN5NXd0NnhjMA=="
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t("social.instagram", "Instagram")}
-          >
-            <Instagram size={22} />
-          </a>
-          <a
-            href="https://t.me/anastasiiasyrmais"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t("social.telegram", "Telegram")}
-          >
-            <Send size={22} />
-          </a>
+          <div className={styles.pills}>
+            <a
+              className={styles.pill}
+              href="https://www.instagram.com/syrmais__photography?igsh=MTc5bjN5NXd0NnhjMA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram size={15} /> {t("social.instagram", "Instagram")}
+            </a>
+            <a
+              className={styles.pill}
+              href="https://t.me/anastasiiasyrmais"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Send size={15} /> {t("social.telegram", "Telegram")}
+            </a>
+            <a
+              className={styles.pill}
+              href="https://wa.me/33777760455"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+                <path d="M17.47 14.38c-.29-.14-1.7-.84-1.97-.93-.26-.1-.46-.14-.65.14-.2.29-.75.93-.92 1.12-.17.2-.34.22-.63.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.2.05-.36-.02-.5-.07-.14-.65-1.57-.9-2.15-.24-.57-.48-.5-.65-.5-.17-.01-.36-.01-.56-.01s-.5.07-.77.36c-.26.29-1 .98-1 2.39s1.03 2.77 1.17 2.96c.14.2 2.03 3.1 4.92 4.34.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/>
+                <path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.85.5 3.58 1.36 5.07L2 22l5.08-1.33A9.94 9.94 0 0 0 12.02 22C17.54 22 22 17.52 22 12S17.54 2 12.02 2Zm0 18.1c-1.68 0-3.24-.5-4.55-1.36l-.33-.2-3.02.79.81-2.94-.22-.34a8.1 8.1 0 0 1-1.29-4.05c0-4.47 3.64-8.1 8.1-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.47-3.63 8.1-8.1 8.1Z"/>
+              </svg>
+              {t("social.whatsapp", "WhatsApp")}
+            </a>
+          </div>
         </div>
       </div>
     </section>

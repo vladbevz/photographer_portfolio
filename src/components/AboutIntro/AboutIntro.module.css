@@ -35,7 +35,7 @@
   );
 }
 
-.text h2 {
+.text h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 500;
@@ -48,7 +48,7 @@
   padding-bottom: 0.6rem;
 }
 
-.text h2::after {
+.text h1::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -205,7 +205,7 @@
     padding-left: 1.5rem;
   }
   
-  .text h2::after {
+  .text h1::after {
     right: -1rem;
   }
 }
@@ -227,12 +227,12 @@
     display: none;
   }
 
-  .text h2 {
+  .text h1 {
     text-align: left;
     margin-bottom: 2rem;
   }
 
-  .text h2::after {
+  .text h1::after {
     display: none;
   }
 
@@ -279,7 +279,7 @@
     gap: 3rem;
   }
   
-  .text h2 {
+  .text h1 {
     font-size: 2.2rem;
   }
   
@@ -309,7 +309,7 @@
     gap: 2rem;
   }
   
-  .text h2 {
+  .text h1 {
     font-size: 2rem;
   }
   

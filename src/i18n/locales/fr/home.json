@@ -2,7 +2,7 @@
 {
   "hero": {
     "title": "Capturer l'instant présent",
-    "subtitle": "Photographie d'art avec un regard pour l'élégance, l'émotion et la beauté intemporelle",
+    "subtitle": "Photographe à Nîmes — un regard pour l'élégance, l'émotion et la beauté intemporelle, en Occitanie et dans toute la France",
     "cta": "Voir le portfolio",
     "aboutMe": "À propos de moi"
   },
@@ -11,6 +11,7 @@
     "subtitle": "Chaque photographie raconte une histoire unique, cadrée avec précision et un regard artistique pour les détails"
   },
   "linkPreview": {
+    "eyebrow": "Explorer",
     "about": "À propos",
     "aboutSubtitle": "Découvrez l'artiste derrière l'objectif",
     "portfolio": "Portfolio",

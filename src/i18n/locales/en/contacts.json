@@ -1,10 +1,14 @@
 {
-  "title": "Get in Touch",
-  "subtitle": "Ready to create something beautiful? Share your vision and let's bring it to life together.",
+  "eyebrow": "Get in Touch",
+  "title": "Let's create something beautiful, together",
+  "subtitle": "Based in Nîmes, available for sessions throughout France. Share your vision below — I personally reply to every message within 24 hours.",
   "form": {
     "name": "Full Name",
+    "namePlaceholder": "Jane Doe",
     "email": "Email Address",
+    "emailPlaceholder": "you@example.com",
     "message": "Your Message",
+    "messagePlaceholder": "Tell me about your project…",
     "submit": "Send Message",
     "sending": "Sending Message",
     "success": "Your message has been sent successfully!",
@@ -14,10 +18,11 @@
     "contact": "Contact",
     "response": "Response within 24 hours",
     "location": "Location",
-    "available": "Available for projects worldwide"
+    "available": "Available throughout France"
   },
   "social": {
     "instagram": "Instagram",
-    "telegram": "Telegram"
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp"
   }
 }
