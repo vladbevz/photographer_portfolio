@@ -140,7 +140,7 @@
   background: var(--color-text-primary);
   color: var(--color-bg-primary);
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   padding: 0.95rem 1.75rem;
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
@@ -292,7 +292,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
   font-family: 'Inter', sans-serif;
