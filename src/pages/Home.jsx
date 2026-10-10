@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO/SEO';
 import HeroVideo from '../components/HeroVideo/HeroVideo';
+import HomeIntro from '../components/HomeIntro/HomeIntro';
 import LinkPreview from '../components/LinkPreview/LinkPreview';
 import CallToAction from '../components/CTA/CallToAction';
 import Footer from '../components/Footer/Footer';
@@ -13,14 +14,20 @@ const Home = () => {
   return (
     <div>
       <SEO
+        fullTitle={
+          isFr
+            ? "Anastasia Syrmais | Photographe & Vidéaste à Nîmes"
+            : "Anastasia Syrmais | Photographer & Videographer in Nîmes"
+        }
         description={
           isFr
-            ? "Photographe d'art basée à Nîmes — portraits élégants, mode et photographie éditoriale avec un regard pour l'émotion et la beauté intemporelle."
-            : "Fine art photographer based in Nîmes, France — elegant portraits, fashion and editorial photography with an eye for emotion and timeless beauty."
+            ? "Photographe et vidéaste à Nîmes : mariage, famille, grossesse, naissance, portrait et couple. Photographie d'art, mode et éditorial."
+            : "Photographer and videographer in Nîmes: wedding, family, maternity, newborn, portrait and couple sessions. Fine art, fashion and editorial photography."
         }
         path="/"
       />
       <HeroVideo />
+      <HomeIntro />
       <LinkPreview/>
       <CallToAction/>
       <Footer/>

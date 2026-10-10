@@ -7,6 +7,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const SEO = ({
   title,
+  fullTitle: fullTitleOverride,
   description,
   path = '/',
   image = DEFAULT_IMAGE,
@@ -18,7 +19,9 @@ const SEO = ({
   const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
   const ogAlt    = lang === 'fr' ? 'en_US' : 'fr_FR';
 
-  const fullTitle = title
+  const fullTitle = fullTitleOverride
+    ? fullTitleOverride
+    : title
     ? `${title} | Anastasia Syrmais`
     : 'Anastasia Syrmais | Photographe Fine Art';
 
