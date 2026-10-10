@@ -1,0 +1,21 @@
+.section {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 2.5rem 2rem 0;
+}
+
+.text {
+  max-width: 68ch;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1.25rem 0;
+  }
+}

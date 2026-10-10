@@ -12,11 +12,15 @@ const Contacts = () => {
   return (
     <>
       <SEO
-        title={isFr ? "Contact" : "Contact"}
+        fullTitle={
+          isFr
+            ? "Contact | Anastasia Syrmais, photographe et vidéaste à Nîmes"
+            : "Contact | Anastasia Syrmais, Photo & Video in Nîmes"
+        }
         description={
           isFr
-            ? "Contactez Anastasia Syrmais pour discuter de votre projet photo. Basée à Nîmes, disponible pour des séances portraits, mode et éditorial partout en France."
-            : "Contact Anastasia Syrmais to discuss your photography project. Based in Nîmes, available for portrait, fashion and editorial sessions throughout France."
+            ? "Parlez de votre projet à Anastasia Syrmais, photographe et vidéaste à Nîmes : mariage, séance famille, portrait ou vidéo."
+            : "Tell Anastasia Syrmais about your project — photographer and videographer in Nîmes: wedding, family session, portrait or video."
         }
         path="/contacts"
       />

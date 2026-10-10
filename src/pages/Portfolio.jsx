@@ -13,11 +13,15 @@ const Portfolio = () => {
   return (
     <>
       <SEO
-        title="Portfolio"
+        fullTitle={
+          isFr
+            ? "Portfolio | Anastasia Syrmais, photographe à Nîmes"
+            : "Portfolio | Anastasia Syrmais, photographer in Nîmes"
+        }
         description={
           isFr
-            ? "Portraits, couple, grossesse & nouveau-nés, mariage, commercial — explorez toutes les collections d'Anastasia Syrmais, photographe basée à Nîmes, disponible dans toute la France."
-            : "Portraits, couple, maternity & newborn, wedding, commercial — explore all collections by Anastasia Syrmais, fine art photographer based in Nîmes, France."
+            ? "Séances et reportages d'Anastasia Syrmais, photographe à Nîmes : portraits, couples, grossesse, naissance, mariage."
+            : "Sessions and reportage by Anastasia Syrmais, photographer in Nîmes: portraits, couples, maternity, newborn, wedding."
         }
         path="/portfolio"
       />

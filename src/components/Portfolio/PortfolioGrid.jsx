@@ -6,7 +6,8 @@ import { urlFor } from "../../lib/sanity";
 import styles from "./PortfolioGrid.module.css";
 
 const PortfolioGrid = ({ projects }) => {
-  const { t } = useTranslation("portfolio");
+  const { t, i18n } = useTranslation("portfolio");
+  const isFr = i18n.language?.startsWith("fr");
 
   const categoryLabels = {
     portraits: t("filters.portraits"),
@@ -28,7 +29,12 @@ const PortfolioGrid = ({ projects }) => {
             {project.coverImage && (
               <img
                 src={urlFor(project.coverImage).width(600).height(750).url()}
-                alt={project.coverImage.alt || project.title}
+                alt={
+                  project.coverImage.alt ||
+                  (isFr
+                    ? `${project.title}, séance photo à Nîmes`
+                    : `${project.title}, photo session in Nîmes`)
+                }
                 className={styles.image}
                 loading="lazy"
               />
